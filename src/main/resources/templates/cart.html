@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" href="/css/topnav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+
+    <div th:insert="fragments/topnav.html :: div"></div>
+
+    <section class="container my-5">
+        <table class="table table-responsive-sm">
+            <thead>
+            <tr class="text-uppercase">
+                <th>title</th>
+                <th>author</th>
+                <th>genre</th>
+                <th>price</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="order : ${orders}" th:object="${order}">
+                    <td th:text="*{getTitle()}"></td>
+                    <td th:text="*{getAuthor()}"></td>
+                    <td th:text="*{getGenre()}"></td>
+                    <td th:text="*{getPrice()}"></td>
+                    <td><a th:href="${'/delete_order/'+order.orderNumber}"><button class="btn btn-danger">&times;</button></a></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="text-uppercase text-right total-price">total price: <span th:text="${total_price}"></span> pln</p>
+        <a th:href="@{/send_order}">
+            <button class="btn btn-warning btn-lg text-uppercase btn-action" type="button">order</button>
+        </a>
+    </section>
+
+</body>
+</html>

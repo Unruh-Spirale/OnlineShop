@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" href="/css/topnav.css" />
+
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+
+    <div th:insert="fragments/topnav.html :: div"></div>
+
+    <section class="container mt-5">
+        <h2 class="text-uppercase">book details</h2>
+        <table class="table table-responsive-sm mt-2">
+            <thead>
+            <tr class="text-uppercase">
+                <th>title</th>
+                <th>author</th>
+                <th>genre</th>
+                <th>cover</th>
+                <th>price [pln]</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:object="${book}">
+                <td th:text="*{getTitle()}"></td>
+                <td th:text="*{getAuthor()}"></td>
+                <td th:text="*{getGenre()}"></td>
+                <td th:text="*{getCover()}"></td>
+                <td th:text="*{getPrice()}"></td>
+                <td><a sec:authorize="hasAnyAuthority('USER')" th:href="${'/add_order/'+book.idBook}"><button class="btn btn-warning btn-lg text-uppercase">order</button> </a></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>

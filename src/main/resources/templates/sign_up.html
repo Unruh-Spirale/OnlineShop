@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign up</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" href="/css/topnav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+
+</head>
+
+<div th:insert="fragments/topnav.html :: div"></div>
+
+<div class="container my-5">
+    <form action="/sign_up" method='POST'>
+        <h1 class="text-uppercase">Sign up</h1>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <div class="form-group">
+            <label for="username" class="text-uppercase">username</label>
+            <input class="form-control" id="username" type='text' name="username" placeholder="username" value=''>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="text-uppercase">password</label>
+            <input class="form-control" id="password" type='password' name="password" placeholder="password" value=''>
+        </div>
+        <button class="btn btn-success btn-lg text-uppercase btn-register" type="submit">sign up</button>
+    </form>
+</div>
+
+
+</html>

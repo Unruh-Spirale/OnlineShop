@@ -1,0 +1,35 @@
+
+
+.jumbotron{
+    margin-bottom: 0;
+}
+.top{
+    background-image: url('../images/books-bg2.jpg');
+    background-position: 50% 50% ;
+    background-repeat: no-repeat;
+    border-radius: 0;
+}
+.nav-item{
+    color: white;
+    text-transform: uppercase;
+}
+.nav-item:hover{
+    color: darkgrey;
+}
+.logo{
+    color: white;
+}
+.logo:hover{
+    color: darkgrey;
+}
+
+.custom-toggler.navbar-toggler {
+    border: 3px solid white;
+}
+/* Setting the stroke to green using rgb values (0, 128, 0) */
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+    "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+

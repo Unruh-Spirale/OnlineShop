@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" href="/css/topnav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+
+    <div th:insert="fragments/topnav.html :: div"></div>
+
+    <section class="container mt-5">
+        <p>Welcome into online bookstore. Here you can order book from our shop. We are selling our books in very attractive price.
+            In order to order book it is necessary to register in our shop. We are gratefully that you choose
+            our shop. Have a good shopping!
+        </p>
+        <img class="img-fluid" src="/images/home.jpg" alt="book">
+    </section>
+
+
+
+</body>
+</html>

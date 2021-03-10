@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" href="/css/topnav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+
+    <div th:insert="fragments/topnav.html :: div"></div>
+
+    <div class="container my-5">
+        <h2 class="text-uppercase mb-2">Add book form</h2>
+        <form th:action="@{/saveBook}" th:method="post" th:object="${book}">
+            <div class="form-group">
+                <label for="title" class="text-uppercase">title</label>
+                <input type="text" id="title" placeholder="title" th:field="*{title}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="author" class="text-uppercase">author</label>
+                <input type="text" id="author" placeholder="author" th:field="*{author}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="genre" class="text-uppercase">genre</label>
+                <input type="text" id="genre" placeholder="genre" th:field="*{genre}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="cover" class="text-uppercase">cover</label>
+<!--                <input type="text" id="cover" placeholder="cover" th:field="*{cover}" class="form-control" required>-->
+                <select id="cover" th:field="*{cover}" class="form-control">
+                    <option th:value="'SOFT'" th:text="SOFT"></option>
+                    <option th:value="'HARD'" th:text="HARD"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price" class="text-uppercase">price</label>
+                <input type="text" id="price" placeholder="price" th:field="*{price}" class="form-control" required>
+            </div>
+            <button class="btn btn-success btn-action text-uppercase" type="submit">save</button>
+        </form>
+    </div>
+
+
+</body>
+</html>
