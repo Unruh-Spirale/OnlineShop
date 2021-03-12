@@ -12,7 +12,7 @@ In this application I made online shop simulation. User hast to login to applica
 I used bootstrap and thymeleaf to create forntend. Application is  responsive. For deviced with small screen the navbar collapses and I added toggler icon with drop-down menu. There are two account at the beggining. First account is admin account and second account is user account. User can order books and admin can add, update or delete available books.
 ## Technologies
 Project is  created with:
-* SpringBoot version2.4.3 (SpringSecurity, data JPA, Spring Web)
+* SpringBoot version 2.4.3 (Spring Security, data JPA, Spring Web)
 * Thymeleaf
 * Bootstrap version 4.6.0
 * CSS
