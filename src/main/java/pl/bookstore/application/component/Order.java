@@ -45,11 +45,13 @@ public class Order {
 
     public void clearOrder(){
         orders.clear();
+        orderNumber = 0;
     }
 
     public List<Book>clearAfterLogout(){
         List<Book> clearList = this.orders;
         clearList.clear();
+        orderNumber = 0;
         return clearList;
     }
 
